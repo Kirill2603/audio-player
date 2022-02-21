@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 const Error = () => {
 
@@ -13,6 +14,9 @@ const Error = () => {
 
 	return (
 		<>
+			<Head>
+				<title>Error</title>
+			</Head>
 			<h1>404...</h1>
 			<h2>Fuck</h2>
 			<h2>Fuck</h2>

@@ -1,8 +1,15 @@
 import React from "react";
+import Head from "next/head";
 
 const Posts = () => {
 	return (
-		<div>Posts :</div>
+		<>
+			<Head>
+				<title>Posts</title>
+			</Head>
+			<div>Posts :</div>
+		</>
 	)
+
 }
 export default Posts
