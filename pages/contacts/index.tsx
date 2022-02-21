@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import Link from 'next/link'
 import {GetStaticProps} from "next";
-
 
 export const getStaticProps: GetStaticProps  = async () => {
 	const res = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -16,8 +16,8 @@ export const getStaticProps: GetStaticProps  = async () => {
 	return {
 		props: {contacts: data}
 	}
-
 }
+
 const Contacts = ({contacts}: {contacts:  Array<{id: number, name: string, email: string}> }) => {
 
 	return (
@@ -29,7 +29,9 @@ const Contacts = ({contacts}: {contacts:  Array<{id: number, name: string, email
 			<ul>
 				{contacts && contacts.map(({id, name, email}) => (
 					<li key={id}>
-						<strong>{name}</strong>
+						<Link href={`/contacts/${id}`}>
+							{name}
+						</Link>
 						<span> ({email})</span>
 					</li>
 				))}
