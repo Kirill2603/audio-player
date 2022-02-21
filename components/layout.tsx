@@ -1,6 +1,7 @@
-import React, {ReactChildren, ReactElement} from "react";
-import Header from "./header";
+import React, {ReactElement} from "react";
+import styles from '../styles/layout.module.scss'
 import Footer from "./footer";
+import Header from "./header/header";
 
 type LayoutPropsType = {
 	children: ReactElement
@@ -8,11 +9,11 @@ type LayoutPropsType = {
 
 const Layout = ({children}: LayoutPropsType) => {
 	return (
-		<>
-			<Header/>
-			{children}
-			<Footer/>
-		</>
+		<div>
+			<Header />
+			<div className={styles.main}>{children}</div>
+			<Footer />
+		</div>
 	)
 }
 export default Layout
