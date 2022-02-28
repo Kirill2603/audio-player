@@ -18,6 +18,7 @@ const ContactInfo = ({contact}: {contact: {id: number, email: string, name: stri
 			<span>City - {city}</span>
 			<span>Street - {street}</span>
 			<span>Suite - {suite}</span>
+
 		</>
 	);
 };
