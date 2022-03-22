@@ -1,10 +1,13 @@
-import React from "react";
+import React, {FC} from "react";
 import ContactInfo from "../../components/contact-info";
 import {GetServerSideProps} from "next";
+import {ContactType} from "../../types";
 
+type ContactPropsType = {
+	contact: ContactType
+}
 
 export const getServerSideProps: GetServerSideProps  = async (context) => {
-
 
 	const {id} = context.query
 	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -22,8 +25,7 @@ export const getServerSideProps: GetServerSideProps  = async (context) => {
 
 }
 
-const Contact = ({contact}: any) => {
-	console.log(contact)
+const Contact: FC<ContactPropsType> = ({contact}) => {
 	return (
 		<>
 			<ContactInfo contact={contact}/>

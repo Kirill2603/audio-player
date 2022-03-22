@@ -1,13 +1,13 @@
-import React, {ReactElement} from "react";
+import React, {FC, ReactNode} from "react";
 import styles from '../styles/layout.module.scss'
 import Footer from "./footer";
 import Header from "./header/header";
 
 type LayoutPropsType = {
-	children: ReactElement
+	children: ReactNode
 }
 
-const Layout = ({children}: LayoutPropsType) => {
+const Layout: FC<LayoutPropsType> = ({children}) => {
 	return (
 		<>
 			<Header/>

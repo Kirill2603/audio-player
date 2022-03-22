@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {ContactType} from "../types";
 
-const ContactInfo = ({contact}: {contact: {id: number, email: string, name: string, address: any}}) => {
+type ContactInfoPropsType = {
+	contact: ContactType
+}
+
+const ContactInfo: FC<ContactInfoPropsType> = ({contact}) => {
 	const {name, email, address} = contact || {}
 	const {street, suite, city, zipcode} = address || {}
 

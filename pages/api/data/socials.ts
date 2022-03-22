@@ -1,9 +1,6 @@
-export type SocialsType = {
-    id: number,
-    icon: string,
-    path: string
-}
-export const socials: Array<SocialsType> = [
+import {SocialsType} from "../../../types";
+
+export const socials: SocialsType = [
     {
         id: 1,
         icon: "fa-brands fa-linkedin-in",
