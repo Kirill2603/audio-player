@@ -11,7 +11,7 @@ const Layout: FC<LayoutPropsType> = ({children}) => {
 	return (
 		<>
 			<Header/>
-			<div className={styles.main}>{children}</div>
+			{children}
 			<Footer/>
 		</>
 	)
